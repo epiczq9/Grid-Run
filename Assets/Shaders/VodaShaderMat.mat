@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: VodaShaderMat
+  m_Shader: {fileID: -6465566751694194690, guid: ca7c0b94b8c632040be9dd91b27d9547, type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - unity_Lightmaps:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_LightmapsInd:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_ShadowMasks:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - Vector1_3ed465fdf20445e0a8bc9769eabd41ba: 18.68
+    - Vector1_4b1eef2821094b44b216c29730483df7: 5
+    - Vector1_844c98f1eb1b4f3aabe8cb518a30f97c: 3.2
+    m_Colors:
+    - Color_09e5e8cd88814d5d97d11a84fa24608c: {r: 0.8301887, g: 0.52619296, b: 0.27725163, a: 1}
+    - Color_0d3b116e162f4e0ca187ca70fe35fda4: {r: 1, g: 0.2069982, b: 0, a: 1}
+  m_BuildTextureStacks: []
