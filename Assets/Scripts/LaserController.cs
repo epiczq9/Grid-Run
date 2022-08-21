@@ -15,7 +15,7 @@ public class LaserController : MonoBehaviour
     public float interval;
     public bool dangerous;
     void Start() {
-        siu = GetComponent<AudioSource>();
+        //siu = GetComponent<AudioSource>();
         TimersManager.SetLoopableTimer(this, interval, ActivateLaser);
     }
 
@@ -37,7 +37,7 @@ public class LaserController : MonoBehaviour
     }
 
     public void Move() {
-        siu.Play(0);
+        //siu.Play(0);
         transform.DOMove(laserMovingTo.position, speedToMove).SetEase(Ease.Linear);
         laserActivated = false;
         xPos *= -1;
