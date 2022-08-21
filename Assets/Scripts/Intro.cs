@@ -30,7 +30,7 @@ public class Intro : MonoBehaviour
     }
 
     public void BeginGame() {
-        score.SetActive(true);
+        //score.SetActive(true);
         ball.GetComponent<BallBehaviour>().enabled = true;
         laser.SetActive(true);
     }

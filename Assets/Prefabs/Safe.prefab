@@ -208,6 +208,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scoreManager: {fileID: 0}
   effectPrefab: {fileID: 8205935471292390719, guid: dfd28a411df41144b9dc0f50877cab17, type: 3}
-  matActivated: {fileID: 2100000, guid: d50a1c3dfb9783e4dac755bd1c05139f, type: 2}
+  matActivated: {fileID: 2100000, guid: ae77b0b25ca9554409bd02f781df7920, type: 2}
   activated: 0
   clip: {fileID: 0}

@@ -19,7 +19,7 @@ public class SafeSpot : MonoBehaviour
                 clip.Play(0);
                 activated = true;
                 Instantiate(effectPrefab, other.gameObject.transform);
-                scoreManager.GetComponent<Score>().ActivateSpot();
+                //scoreManager.GetComponent<Score>().ActivateSpot();
                 GetComponent<MeshRenderer>().material = matActivated;
             }
         }

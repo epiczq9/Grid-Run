@@ -1447,10 +1447,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 176411657}
     m_Modifications:
-    - target: {fileID: 7782802076058186192, guid: b017e1223388cc947a851bff1590d3da, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: d50a1c3dfb9783e4dac755bd1c05139f, type: 2}
     - target: {fileID: 8575677435078594565, guid: b017e1223388cc947a851bff1590d3da, type: 3}
       propertyPath: m_Name
       value: Safe
@@ -2589,10 +2585,6 @@ PrefabInstance:
     - target: {fileID: 8575677435078594565, guid: b017e1223388cc947a851bff1590d3da, type: 3}
       propertyPath: m_Name
       value: Safe (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 8918117790547634466, guid: b017e1223388cc947a851bff1590d3da, type: 3}
-      propertyPath: scoreManager
-      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 8955757075846204095, guid: b017e1223388cc947a851bff1590d3da, type: 3}
       propertyPath: m_RootOrder
