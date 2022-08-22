@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using Timers;
 using DG.Tweening;
 
@@ -42,5 +43,13 @@ public class LaserController : MonoBehaviour
         laserActivated = false;
         xPos *= -1;
     }
+
+    private void OnTriggerEnter(Collider other) {
+        if(other.gameObject.CompareTag("Player") && !other.gameObject.GetComponent<BallBehaviour>().safe) {
+
+        }
+    }
+
+   
 }
 

@@ -18,6 +18,8 @@ public class BallBehaviour : MonoBehaviour
     public bool respawning = false;
     public GameObject finalSquare;
     public Transform ballLiftPos, squareLiftPos;
+    public GameObject redScreen;
+    public float timeToFade = 1f;
 
     public Text outputText;
 
@@ -37,7 +39,7 @@ public class BallBehaviour : MonoBehaviour
 
     // Update is called once per frame
     void Update() {
-        
+
         if (Input.GetAxis("Horizontal") < 0 && !isMoving) {
             StartCoroutine(MovePlayer(Vector3.left));
             //Move(Vector3.left);
@@ -54,8 +56,15 @@ public class BallBehaviour : MonoBehaviour
             StartCoroutine(MovePlayer(Vector3.up));
             //Move(Vector3.up);
         }
-        
+
         Swipe();
+
+        if (redScreen.GetComponent<Image>().color.a > 0) {
+            Color color = redScreen.GetComponent<Image>().color;
+            color.a -= timeToFade * Time.deltaTime;
+            redScreen.GetComponent<Image>().color = color;
+
+        }
     }
 
     public void Swipe() {
@@ -129,13 +138,13 @@ public class BallBehaviour : MonoBehaviour
             } else if (hit.collider.CompareTag("Finish")) {
                 transform.position = origPos;
                 collided = true;
-                //finish.GetComponent<Finish>().MoveUp();
-                //transform.DOMove(new Vector3(-26, -6, -12), 5f);
-                //finalSquare.transform.DOMove(new Vector3(-26, -6, -11), 5f);
                 transform.DOMove(ballLiftPos.position, 5f);
                 finalSquare.transform.DOMove(squareLiftPos.position, 5f);
-            } else if (hit.collider.CompareTag("Laser")) {
+            } else if (hit.collider.CompareTag("Laser") && !safe) {
                 Death();
+                collided = true;
+            } else if (hit.collider.CompareTag("Block") && !safe) {
+                Block();
                 collided = true;
             }
 
@@ -158,11 +167,14 @@ public class BallBehaviour : MonoBehaviour
     private void OnTriggerEnter(Collider other) {
         if (other.gameObject.CompareTag("Safe") || other.gameObject.CompareTag("Start")) {
             safe = true;
-        }
-        if (other.gameObject.CompareTag("Laser") && !safe) {
+        } else if (other.gameObject.CompareTag("Laser") && !safe) {
             respawning = true;
             collided = true;
             Death();
+        }
+        if (other.gameObject.CompareTag("Block")){
+            Block();
+            collided = true;
         }
     }
 
@@ -172,14 +184,35 @@ public class BallBehaviour : MonoBehaviour
         }
     }
 
+    private void OnTriggerStay(Collider other) {
+        if (other.gameObject.CompareTag("Safe") || other.gameObject.CompareTag("Start")) {
+            safe = true;
+        }
+    }
+
     public void Death() {
         //Destroy(gameObject);
         //Respawn();
         Instantiate(hitEffectPrefab, this.transform);
+        RedScreenActivate();
         transform.position = startingBallPosition;
         origPos = startingBallPosition;
         targetPos = startingBallPosition;
         //gameManager.GetComponent<GameManager>().LoadLevel();
         respawning = false;
     }
+
+    public void Block() {
+        transform.position = startingBallPosition;
+        origPos = startingBallPosition;
+        targetPos = startingBallPosition;
+        respawning = false;
+    }
+
+    public void RedScreenActivate() {
+        Color color = redScreen.GetComponent<Image>().color;
+        color.a = 0.5f;
+        redScreen.GetComponent<Image>().color = color;
+    }
+
 }
