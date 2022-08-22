@@ -17,6 +17,7 @@ public class BallBehaviour : MonoBehaviour
     public GameObject gameManager;
     public bool respawning = false;
     public GameObject finalSquare;
+    public Transform ballLiftPos, squareLiftPos;
 
     public Text outputText;
 
@@ -129,8 +130,10 @@ public class BallBehaviour : MonoBehaviour
                 transform.position = origPos;
                 collided = true;
                 //finish.GetComponent<Finish>().MoveUp();
-                transform.DOMove(new Vector3(-26, -6, -12), 5f);
-                finalSquare.transform.DOMove(new Vector3(-26, -6, -11), 5f);
+                //transform.DOMove(new Vector3(-26, -6, -12), 5f);
+                //finalSquare.transform.DOMove(new Vector3(-26, -6, -11), 5f);
+                transform.DOMove(ballLiftPos.position, 5f);
+                finalSquare.transform.DOMove(squareLiftPos.position, 5f);
             } else if (hit.collider.CompareTag("Laser")) {
                 Death();
                 collided = true;

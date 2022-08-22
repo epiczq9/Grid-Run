@@ -10113,6 +10113,8 @@ MonoBehaviour:
   gameManager: {fileID: 0}
   respawning: 0
   finalSquare: {fileID: 0}
+  ballLiftPos: {fileID: 0}
+  squareLiftPos: {fileID: 0}
   outputText: {fileID: 0}
   swipeRange: 0
   tapRange: 0
@@ -12656,7 +12658,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1383242241}
   m_LocalRotation: {x: 1, y: -0, z: -0, w: 0}
-  m_LocalPosition: {x: -2, y: 3, z: -12}
+  m_LocalPosition: {x: -2, y: 3, z: -13}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 681104239}
@@ -19496,6 +19498,10 @@ PrefabInstance:
       value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 3213915547646345458, guid: 6744aecfc4df51c4896434ff6ffb27ca, type: 3}
+      propertyPath: ballLiftPos
+      value: 
+      objectReference: {fileID: 1383242242}
+    - target: {fileID: 3213915547646345458, guid: 6744aecfc4df51c4896434ff6ffb27ca, type: 3}
       propertyPath: finalSquare
       value: 
       objectReference: {fileID: 2006665211}
@@ -19503,6 +19509,10 @@ PrefabInstance:
       propertyPath: gameManager
       value: 
       objectReference: {fileID: 1994665393}
+    - target: {fileID: 3213915547646345458, guid: 6744aecfc4df51c4896434ff6ffb27ca, type: 3}
+      propertyPath: squareLiftPos
+      value: 
+      objectReference: {fileID: 2110297415}
     - target: {fileID: 3213915547646345458, guid: 6744aecfc4df51c4896434ff6ffb27ca, type: 3}
       propertyPath: hitEffectPrefab
       value: 
