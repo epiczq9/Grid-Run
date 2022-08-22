@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using DG.Tweening;
 
 public class BallBehaviour : MonoBehaviour
 {
@@ -15,6 +16,7 @@ public class BallBehaviour : MonoBehaviour
     public GameObject ballPrefab;
     public GameObject gameManager;
     public bool respawning = false;
+    public GameObject finalSquare;
 
     public Text outputText;
 
@@ -123,6 +125,12 @@ public class BallBehaviour : MonoBehaviour
             } else if (hit.collider.CompareTag("Wall")) {
                 transform.position = origPos;
                 collided = true;
+            } else if (hit.collider.CompareTag("Finish")) {
+                transform.position = origPos;
+                collided = true;
+                //finish.GetComponent<Finish>().MoveUp();
+                transform.DOMove(new Vector3(-26, -6, -12), 5f);
+                finalSquare.transform.DOMove(new Vector3(-26, -6, -11), 5f);
             } else if (hit.collider.CompareTag("Laser")) {
                 Death();
                 collided = true;
@@ -173,5 +181,8 @@ public class BallBehaviour : MonoBehaviour
 
     public void Respawn() {
         //Instantiate(ballPrefab, startingBallPosition);
+    }
+    
+    public void Finished() {
     }
 }
