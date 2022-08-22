@@ -13,7 +13,7 @@ public class BallBehaviour : MonoBehaviour
     float rayLength = 1f;
     public bool safe;
     public Vector3 startingBallPosition;
-    public GameObject ballPrefab;
+    public GameObject hitEffectPrefab;
     public GameObject gameManager;
     public bool respawning = false;
     public GameObject finalSquare;
@@ -172,17 +172,11 @@ public class BallBehaviour : MonoBehaviour
     public void Death() {
         //Destroy(gameObject);
         //Respawn();
+        Instantiate(hitEffectPrefab, this.transform);
         transform.position = startingBallPosition;
         origPos = startingBallPosition;
         targetPos = startingBallPosition;
         //gameManager.GetComponent<GameManager>().LoadLevel();
         respawning = false;
-    }
-
-    public void Respawn() {
-        //Instantiate(ballPrefab, startingBallPosition);
-    }
-    
-    public void Finished() {
     }
 }
