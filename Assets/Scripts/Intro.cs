@@ -12,9 +12,7 @@ public class Intro : MonoBehaviour
 
     void Start() {
         ball.GetComponent<BallBehaviour>().enabled = false;
-        vCam1.GetComponent<CinemachineVirtualCamera>().Priority = 10;
-        vCam3.GetComponent<CinemachineVirtualCamera>().Priority = 15;
-        //TimersManager.SetTimer(this, 2, ChangeCamera);
+        TimersManager.SetTimer(this, 0.1f, ChangeCamera);
         TimersManager.SetTimer(this, 4, BeginGame);
     }
 
@@ -25,7 +23,7 @@ public class Intro : MonoBehaviour
     }
 
     public void ChangeCamera() {
-        vCam2.GetComponent<CinemachineVirtualCamera>().Priority = 10;
+        vCam1.GetComponent<CinemachineVirtualCamera>().Priority = 10;
         vCam3.GetComponent<CinemachineVirtualCamera>().Priority = 15;
     }
 

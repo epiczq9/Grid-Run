@@ -5,12 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    public int level;
+    public int nextLevel;
 
     private void Awake() {
         Application.targetFrameRate = 60;
     }
     public void LoadLevel() {
-        SceneManager.LoadScene(level);
+        SceneManager.LoadScene(nextLevel);
     }
 }

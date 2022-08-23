@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
+using Timers;
 
 public class BallBehaviour : MonoBehaviour
 {
@@ -20,6 +21,8 @@ public class BallBehaviour : MonoBehaviour
     public Transform ballLiftPos, squareLiftPos;
     public GameObject redScreen;
     public float timeToFade = 1f;
+    public int nextLevel;
+    public GameObject gameMngr;
 
     public Text outputText;
 
@@ -140,6 +143,9 @@ public class BallBehaviour : MonoBehaviour
                 collided = true;
                 transform.DOMove(ballLiftPos.position, 5f);
                 finalSquare.transform.DOMove(squareLiftPos.position, 5f);
+                GetComponent<BallBehaviour>().enabled = false;
+                TimersManager.SetTimer(this, 3f, SwitchScene);
+                
             } else if (hit.collider.CompareTag("Laser") && !safe) {
                 Death();
                 collided = true;
@@ -213,6 +219,10 @@ public class BallBehaviour : MonoBehaviour
         Color color = redScreen.GetComponent<Image>().color;
         color.a = 0.5f;
         redScreen.GetComponent<Image>().color = color;
+    }
+
+    public void SwitchScene() {
+        gameMngr.GetComponent<GameManager>().LoadLevel();
     }
 
 }

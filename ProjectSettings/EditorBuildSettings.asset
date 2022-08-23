@@ -6,6 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/BEEGLevel.unity
-    guid: d8731bc291b67ca4da0dfbdfccc3be02
+    path: Assets/Scenes/TimerPreload.unity
+    guid: fd79cbff30fdd34409bb7a5de249c85d
+  - enabled: 1
+    path: Assets/Scenes/REKLAMA 0.unity
+    guid: c59be78003230c14aac47829b72bf39f
+  - enabled: 1
+    path: Assets/Scenes/REKLAMA 2.unity
+    guid: 917875952fd987a4b8c64a77245d64dd
   m_configObjects: {}
