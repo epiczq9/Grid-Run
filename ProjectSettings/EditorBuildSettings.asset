@@ -14,4 +14,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/REKLAMA 2.unity
     guid: 917875952fd987a4b8c64a77245d64dd
+  - enabled: 1
+    path: Assets/Scenes/REKLAMA 3.unity
+    guid: 7c2d74dc5dbd8694f91b5ce7e0a9cfa1
+  - enabled: 1
+    path: Assets/Scenes/REKLAMA 4.unity
+    guid: bc3c5e034fd45e24985a70d49c2ebb3d
+  - enabled: 1
+    path: Assets/Scenes/REKLAMA 5.unity
+    guid: fe0def48f6020834980af7b6c94febfb
   m_configObjects: {}
